@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>رونق البن | RB Cafe</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f8f5f0;
+      color: #2d211b;
+      line-height: 1.7;
+    }
+
+    /* الهيدر */
+    header {
+      background: #241914;
+      color: white;
+      padding: 18px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .logo span {
+      color: #c89b6d;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-right: 22px;
+      font-size: 15px;
+    }
+
+    nav a:hover {
+      color: #c89b6d;
+    }
+
+    /* الرئيسية */
+    .hero {
+      min-height: 75vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 40px 20px;
+      background:
+        linear-gradient(rgba(35,25,20,.75), rgba(35,25,20,.75)),
+        url("https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1600&q=80")
+        center/cover;
+      color: white;
+    }
+
+    .hero h1 {
+      font-size: 65px;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 21px;
+      margin-bottom: 30px;
+      color: #eee;
+    }
+
+    .buttons a {
+      display: inline-block;
+      padding: 13px 28px;
+      border-radius: 30px;
+      text-decoration: none;
+      margin: 5px;
+      font-weight: bold;
+    }
+
+    .menu-btn {
+      background: #c89b6d;
+      color: white;
+    }
+
+    .contact-btn {
+      border: 1px solid white;
+      color: white;
+    }
+
+    /* الأقسام */
+    section {
+      padding: 75px 7%;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 34px;
+      margin-bottom: 40px;
+    }
+
+    .section-title span {
+      color: #a4774d;
+    }
+
+    /* عن المحل */
+    .about {
+      max-width: 850px;
+      margin: auto;
+      text-align: center;
+      font-size: 18px;
+      color: #66574f;
+    }
+
+    /* المنيو */
+    .categories {
+      text-align: center;
+      margin-bottom: 35px;
+    }
+
+    .categories button {
+      border: none;
+      background: #e7ddd3;
+      color: #392a22;
+      padding: 10px 22px;
+      margin: 5px;
+      border-radius: 25px;
+      cursor: pointer;
+      font-size: 15px;
+    }
+
+    .categories button:hover {
+      background: #c89b6d;
+      color: white;
+    }
+
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 25px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .card {
+      background: white;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 5px 20px rgba(0,0,0,.08);
+      transition: .3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card-img {
+      height: 190px;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .card-content {
+      padding: 18px;
+    }
+
+    .card h3 {
+      margin-bottom: 5px;
+      font-size: 20px;
+    }
+
+    .card p {
+      color: #87776d;
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+
+    .price {
+      color: #a4774d;
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    /* الموقع */
+    .location {
+      background: #241914;
+      color: white;
+      text-align: center;
+    }
+
+    .location p {
+      color: #ddd;
+      margin-bottom: 25px;
+    }
+
+    .map-btn {
+      display: inline-block;
+      background: #c89b6d;
+      color: white;
+      padding: 13px 28px;
+      border-radius: 30px;
+      text-decoration: none;
+    }
+
+    /* التواصل */
+    .contact {
+      text-align: center;
+    }
+
+    .socials {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+      margin-top: 25px;
+    }
+
+    .socials a {
+      text-decoration: none;
+      background: #241914;
+      color: white;
+      padding: 13px 25px;
+      border-radius: 30px;
+    }
+
+    .socials a:hover {
+      background: #a4774d;
+    }
+
+    /* الفوتر */
+    footer {
+      background: #17100d;
+      color: #aaa;
+      text-align: center;
+      padding: 25px;
+      font-size: 14px;
+    }
+
+    /* الجوال */
+    @media (max-width: 700px) {
+
+      header {
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      nav a {
+        margin: 0 7px;
+        font-size: 13px;
+      }
+
+      .hero h1 {
+        font-size: 45px;
+      }
+
+      .hero p {
+        font-size: 17px;
+      }
+
+      section {
+        padding: 55px 5%;
+      }
+
+      .section-title {
+        font-size: 28px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- الهيدر -->
+  <header>
+    <div class="logo">
+      رونق <span>البن</span>
+    </div>
+
+    <nav>
+      <a href="#home">الرئيسية</a>
+      <a href="#menu">المنيو</a>
+      <a href="#location">موقعنا</a>
+      <a href="#contact">تواصل معنا</a>
+    </nav>
+  </header>
+
+
+  <!-- الرئيسية -->
+  <section class="hero" id="home">
+    <div>
+      <h1>رونق البن</h1>
+
+      <p>
+        قهوة تُصنع برونق
+      </p>
+
+      <div class="buttons">
+        <a href="#menu" class="menu-btn">شاهد المنيو</a>
+
+        <a href="#contact" class="contact-btn">
+          تواصل معنا
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- عن المحل -->
+  <section>
+    <h2 class="section-title">
+      أهلاً بكم في <span>رونق البن</span>
+    </h2>
+
+    <p class="about">
+      في رونق البن نهتم بتقديم القهوة والحلى بجودة عالية
+      وأجواء مريحة تناسب العائلة والشباب.
+      نسعى لأن تكون كل زيارة لكم تجربة تستحق التكرار.
+    </p>
+  </section>
+
+
+  <!-- المنيو -->
+  <section id="menu">
+
+    <h2 class="section-title">
+      <span>المنيو</span>
+    </h2>
+
+    <div class="categories">
+      <button onclick="showCategory('all')">الكل</button>
+      <button onclick="showCategory('hot')">قهوة ساخنة</button>
+      <button onclick="showCategory('cold')">مشروبات باردة</button>
+      <button onclick="showCategory('dessert')">الحلى</button>
+    </div>
+
+
+    <div class="menu-grid">
+
+      <!-- منتج -->
+      <div class="card hot">
+        <div class="card-img"
+          style="background-image:url('https://images.unsplash.com/photo-1494314671902-399b18174975?auto=format&fit=crop&w=800&q=80');">
+        </div>
+
+        <div class="card-content">
+          <h3>V60</h3>
+          <p>قهوة مقطرة مختارة بعناية</p>
+          <div class="price">25 ريال</div>
+        </div>
+      </div>
+
+
+      <div class="card hot">
+        <div class="card-img"
+          style="background-image:url('https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=800&q=80');">
+        </div>
+
+        <div class="card-content">
+          <h3>قهوة اليوم</h3>
+          <p>قهوة اليوم المختارة</p>
+          <div class="price">10 ريال</div>
+        </div>
+      </div>
+
+
+      <div class="card cold">
+        <div class="card-img"
+          style="background-image:url('https://images.unsplash.com/photo-1517701604599-bb29b565090c?auto=format&fit=crop&w=800&q=80');">
+        </div>
+
+        <div class="card-content">
+          <h3>مشروب بارد</h3>
+          <p>مشروب منعش ولذيذ</p>
+          <div class="price">18 ريال</div>
+        </div>
+      </div>
+
+
+      <div class="card dessert">
+        <div class="card-img"
+          style="background-image:url('https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&w=800&q=80');">
+        </div>
+
+        <div class="card-content">
+          <h3>رونق كيك</h3>
+          <p>حلى مميز من رونق البن</p>
+          <div class="price">18 ريال</div>
+        </div>
+      </div>
+
+
+      <div class="card dessert">
+        <div class="card-img"
+          style="background-image:url('https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=800&q=80');">
+        </div>
+
+        <div class="card-content">
+          <h3>ماتيلدا</h3>
+          <p>كيكة شوكولاتة غنية</p>
+          <div class="price">22 ريال</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- الموقع -->
+  <section class="location" id="location">
+
+    <h2 class="section-title">
+      <span>موقعنا</span>
+    </h2>
+
+    <p>
+      نسعد بزيارتكم في رونق البن
+    </p>
+
+    <!-- غير الرابط لاحقاً برابط موقع المحل -->
+    <a
+      href="https://maps.google.com"
+      target="_blank"
+      class="map-btn">
+      📍 افتح الموقع في الخريطة
+    </a>
+
+  </section>
+
+
+  <!-- التواصل -->
+  <section class="contact" id="contact">
+
+    <h2 class="section-title">
+      <span>تواصل معنا</span>
+    </h2>
+
+    <p>
+      تابعونا وتواصلوا معنا
+    </p>
+
+    <div class="socials">
+
+      <!-- غير الروابط لاحقاً -->
+      <a href="#" target="_blank">💬 واتساب</a>
+
+      <a href="#" target="_blank">📸 Instagram</a>
+
+      <a href="#" target="_blank">🎵 TikTok</a>
+
+    </div>
+
+  </section>
+
+
+  <!-- الفوتر -->
+  <footer>
+    © 2026 رونق البن | RB Cafe
+  </footer>
+
+
+  <script>
+
+    function showCategory(category) {
+
+      const cards = document.querySelectorAll(".card");
+
+      cards.forEach(card => {
+
+        if (category === "all") {
+          card.style.display = "block";
+        }
+
+        else if (card.classList.contains(category)) {
+          card.style.display = "block";
+        }
+
+        else {
+          card.style.display = "none";
+        }
+
+      });
+
+    }
+
+  </script>
+
+</body>
+</html>
