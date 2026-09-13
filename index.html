@@ -1,1329 +1,767 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>رونق البن | RB Cafe</title>
 
-<meta name="description" content="رونق البن - قهوة وحلى ومشروبات">
-
 <style>
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-html{
-    scroll-behavior:smooth;
+html {
+  scroll-behavior: smooth;
 }
 
-body{
-    font-family:Arial,Tahoma,sans-serif;
-    background:#f7f1e8;
-    color:#2b1b16;
+body {
+  font-family: Tahoma, Arial, sans-serif;
+  background: #f8f5f0;
+  color: #241b16;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
 /* HEADER */
 
-header{
-    position:fixed;
-    top:0;
-    right:0;
-    left:0;
-    z-index:1000;
-
-    background:rgba(35,20,15,.96);
-    padding:16px 7%;
-
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(248,245,240,.96);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid #e5ddd4;
 }
 
-.logo{
-    color:white;
-    font-size:25px;
-    font-weight:bold;
+.nav {
+  max-width: 1100px;
+  margin: auto;
+  padding: 14px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.logo span{
-    display:block;
-    color:#d4a36a;
-    font-size:10px;
-    letter-spacing:4px;
-    text-align:center;
+.logo {
+  font-size: 25px;
+  font-weight: 900;
+  color: #4a2d20;
 }
 
-nav{
-    display:flex;
-    gap:25px;
+.logo span {
+  display: block;
+  font-size: 10px;
+  letter-spacing: 4px;
+  color: #9b765f;
+  text-align: center;
 }
 
-nav a{
-    color:white;
-    text-decoration:none;
-    font-size:15px;
+nav {
+  display: flex;
+  gap: 8px;
 }
 
-nav a:hover{
-    color:#d4a36a;
+nav a {
+  padding: 8px 14px;
+  border-radius: 20px;
+  font-size: 14px;
+}
+
+nav a:hover {
+  background: #eadfd5;
 }
 
 /* HERO */
 
-.hero{
-    min-height:100vh;
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
-    text-align:center;
-    color:white;
-
-    padding:120px 20px 70px;
-
-    background:
-    linear-gradient(
-        rgba(30,12,7,.70),
-        rgba(30,12,7,.82)
-    ),
-    url("https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1800&q=85")
-    center/cover;
+.hero {
+  max-width: 1100px;
+  margin: auto;
+  padding: 75px 18px 55px;
+  text-align: center;
 }
 
-.hero h1{
-    font-size:75px;
-    margin-bottom:5px;
+.badge {
+  display: inline-block;
+  background: #eadfd5;
+  color: #654333;
+  padding: 7px 16px;
+  border-radius: 30px;
+  font-size: 13px;
+  margin-bottom: 18px;
 }
 
-.hero .english{
-    color:#d4a36a;
-    letter-spacing:5px;
-    font-size:16px;
-    margin-bottom:25px;
+h1 {
+  font-size: clamp(42px, 8vw, 75px);
+  line-height: 1;
+  color: #3b251b;
+  margin-bottom: 15px;
 }
 
-.hero h2{
-    font-size:30px;
-    margin-bottom:12px;
+.hero p {
+  font-size: 18px;
+  color: #6c5a4f;
+  max-width: 600px;
+  margin: 0 auto 28px;
 }
 
-.hero p{
-    color:#eee;
-    font-size:17px;
-    margin-bottom:30px;
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
 }
 
-.button{
-    display:inline-block;
-    padding:14px 30px;
-    border-radius:40px;
-    margin:5px;
-    text-decoration:none;
-    font-weight:bold;
-    transition:.3s;
+.btn {
+  padding: 12px 22px;
+  border-radius: 30px;
+  font-weight: bold;
+  border: 1px solid #4a2d20;
+  transition: .2s;
 }
 
-.button:hover{
-    transform:translateY(-3px);
+.btn.primary {
+  background: #4a2d20;
+  color: white;
 }
 
-.button-main{
-    background:#d4a36a;
-    color:white;
-}
-
-.button-outline{
-    border:1px solid white;
-    color:white;
+.btn:hover {
+  transform: translateY(-2px);
 }
 
 /* SECTIONS */
 
-section{
-    padding:90px 7%;
+section {
+  max-width: 1100px;
+  margin: auto;
+  padding: 45px 18px;
 }
 
-.title{
-    text-align:center;
-    margin-bottom:45px;
+.section-title {
+  text-align: center;
+  margin-bottom: 25px;
 }
 
-.title small{
-    display:block;
-    color:#b17b46;
-    letter-spacing:3px;
-    margin-bottom:8px;
+.section-title h2 {
+  font-size: 32px;
+  color: #3b251b;
 }
 
-.title h2{
-    font-size:38px;
+.section-title p {
+  color: #7b6b61;
 }
 
-/* ABOUT */
+/* TABS */
 
-.about{
-    max-width:850px;
-    margin:auto;
-    text-align:center;
-    color:#66544c;
-    line-height:2;
-    font-size:18px;
+.tabs {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding-bottom: 15px;
+  margin-bottom: 25px;
+  justify-content: center;
 }
 
-/* MENU */
-
-.menu{
-    background:white;
+.tab {
+  white-space: nowrap;
+  border: 1px solid #d8c9bd;
+  background: white;
+  padding: 10px 17px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-family: inherit;
 }
 
-.categories{
-    display:flex;
-    justify-content:center;
-    flex-wrap:wrap;
-    gap:10px;
-    margin-bottom:40px;
+.tab.active {
+  background: #4a2d20;
+  color: white;
+  border-color: #4a2d20;
 }
 
-.categories button{
-    border:none;
-    padding:12px 23px;
-    border-radius:30px;
-    background:#eee1d2;
-    color:#38241c;
-    cursor:pointer;
-    font-size:15px;
+/* MENU CARDS */
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(210px,1fr));
+  gap: 18px;
 }
 
-.categories button:hover,
-.categories button.active{
-    background:#7d291d;
-    color:white;
+.card {
+  background: white;
+  border: 1px solid #e6ddd5;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 5px 18px rgba(50,35,25,.06);
+  transition: .2s;
 }
 
-.menu-grid{
-    max-width:1200px;
-    margin:auto;
-
-    display:grid;
-    grid-template-columns:
-    repeat(auto-fit,minmax(240px,1fr));
-
-    gap:25px;
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(50,35,25,.11);
 }
 
-.card{
-    background:white;
-    border-radius:20px;
-    overflow:hidden;
-
-    border:1px solid #eee4da;
-
-    box-shadow:0 8px 25px rgba(0,0,0,.08);
-
-    transition:.3s;
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+  background: #eee;
 }
 
-.card:hover{
-    transform:translateY(-6px);
+.card-body {
+  padding: 14px;
 }
 
-.card img{
-    width:100%;
-    height:230px;
-    object-fit:cover;
-    display:block;
+.card h3 {
+  font-size: 18px;
+  margin-bottom: 7px;
 }
 
-.card-content{
-    padding:20px;
-}
-
-.card h3{
-    font-size:20px;
-    margin-bottom:7px;
-}
-
-.card p{
-    color:#8b776d;
-    font-size:14px;
-}
-
-.price{
-    color:#7d291d;
-    font-size:18px;
-    font-weight:bold;
-    margin-top:12px;
-}
-
-/* LOCATION */
-
-.location{
-    background:#24130f;
-    color:white;
-    text-align:center;
-}
-
-.location p{
-    color:#ddd;
-    margin-bottom:25px;
-}
-
-.location a{
-    display:inline-block;
-    background:#d4a36a;
-    color:white;
-    padding:14px 30px;
-    border-radius:30px;
-    text-decoration:none;
+.price {
+  color: #7b4f37;
+  font-weight: 800;
+  font-size: 15px;
+  white-space: pre-line;
 }
 
 /* CONTACT */
 
-.contact{
-    text-align:center;
+.contact {
+  background: #eee6de;
+  border-radius: 25px;
+  text-align: center;
+  padding: 38px 18px;
 }
 
-.socials{
-    display:flex;
-    justify-content:center;
-    flex-wrap:wrap;
-    gap:12px;
+.contact-grid {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 20px;
 }
 
-.socials a{
-    background:#24130f;
-    color:white;
-    padding:14px 25px;
-    border-radius:30px;
-    text-decoration:none;
-    transition:.3s;
+.contact a {
+  background: white;
+  padding: 13px 20px;
+  border-radius: 14px;
+  border: 1px solid #ded1c6;
+  font-weight: bold;
+  min-width: 145px;
 }
 
-.socials a:hover{
-    background:#7d291d;
+footer {
+  text-align: center;
+  padding: 30px 15px;
+  color: #87766c;
+  font-size: 13px;
 }
 
-/* FOOTER */
-
-footer{
-    background:#130907;
-    color:#aaa;
-    text-align:center;
-    padding:28px;
-}
-
-footer strong{
-    color:white;
+.hidden {
+  display: none !important;
 }
 
 /* MOBILE */
 
-@media(max-width:700px){
+@media(max-width:650px) {
 
-    header{
-        padding:13px 5%;
-    }
+  nav {
+    display: none;
+  }
 
-    .logo{
-        font-size:19px;
-    }
+  .hero {
+    padding-top: 50px;
+  }
 
-    nav{
-        gap:9px;
-    }
+  .menu-grid {
+    grid-template-columns: repeat(2,minmax(0,1fr));
+    gap: 10px;
+  }
 
-    nav a{
-        font-size:11px;
-    }
+  .card img {
+    height: 145px;
+  }
 
-    .hero h1{
-        font-size:55px;
-    }
+  .card-body {
+    padding: 11px;
+  }
 
-    .hero h2{
-        font-size:23px;
-    }
+  .card h3 {
+    font-size: 15px;
+  }
 
-    .title h2{
-        font-size:30px;
-    }
+  .price {
+    font-size: 13px;
+  }
 
-    section{
-        padding:70px 5%;
-    }
+  .tabs {
+    justify-content: flex-start;
+  }
 
-    .menu-grid{
-        grid-template-columns:repeat(2,1fr);
-        gap:12px;
-    }
-
-    .card img{
-        height:175px;
-    }
-
-    .card-content{
-        padding:13px;
-    }
-
-    .card h3{
-        font-size:16px;
-    }
-
-    .card p{
-        font-size:12px;
-    }
-
-    .price{
-        font-size:15px;
-    }
-}
-
-@media(max-width:430px){
-
-    .menu-grid{
-        grid-template-columns:1fr;
-    }
-
-    .card img{
-        height:230px;
-    }
 }
 
 </style>
 </head>
 
-
 <body>
-
-<!-- HEADER -->
 
 <header>
 
-<div class="logo">
+<div class="nav">
+
+<a class="logo" href="#">
 رونق البن
 <span>RB CAFE</span>
-</div>
+</a>
 
 <nav>
-<a href="#home">الرئيسية</a>
 <a href="#menu">المنيو</a>
-<a href="#location">موقعنا</a>
 <a href="#contact">تواصل معنا</a>
 </nav>
+
+</div>
 
 </header>
 
 
+<main>
+
 <!-- HERO -->
 
-<section class="hero" id="home">
+<section class="hero">
 
-<div>
+<span class="badge">
+أهلاً بكم في رونق البن ☕
+</span>
 
-<h1>رونق البن</h1>
-
-<div class="english">
-RB CAFE
-</div>
-
-<h2>قهوة تُصنع برونق</h2>
+<h1>
+رونق البن
+</h1>
 
 <p>
-أهلاً بكم في رونق البن ☕
+قهوتك، حلاك، ووقتك الجميل في مكان واحد.
 </p>
 
-<a href="#menu" class="button button-main">
-شاهد المنيو
+<div class="buttons">
+
+<a class="btn primary" href="#menu">
+شوف المنيو
 </a>
 
-<a href="#contact" class="button button-outline">
-تواصل معنا
+<a class="btn" href="https://wa.me/966579299660" target="_blank">
+💬 واتساب
 </a>
 
 </div>
-
-</section>
-
-
-<!-- ABOUT -->
-
-<section>
-
-<div class="title">
-
-<small>WELCOME TO RB</small>
-
-<h2>
-أهلاً بكم في رونق البن
-</h2>
-
-</div>
-
-<p class="about">
-
-في رونق البن نقدم لكم القهوة والمشروبات والحلى
-بجودة نهتم بها، في أجواء مريحة تناسب الجميع.
-اختر طلبك واستمتع بتجربة رونق البن.
-
-</p>
 
 </section>
 
 
 <!-- MENU -->
 
-<section class="menu" id="menu">
+<section id="menu">
 
-<div class="title">
+<div class="section-title">
 
-<small>OUR MENU</small>
+<h2>
+المنيو
+</h2>
 
-<h2>المنيو</h2>
+<p>
+اختر القسم وشوف الأصناف
+</p>
 
 </div>
 
 
-<div class="categories">
+<div class="tabs">
 
-<button class="active" onclick="filterMenu('all',this)">
-الكل
-</button>
-
-<button onclick="filterMenu('hot',this)">
+<button class="tab active"
+onclick="showSection('hot',this)">
 المشروبات الساخنة
 </button>
 
-<button onclick="filterMenu('cold',this)">
+<button class="tab"
+onclick="showSection('cold',this)">
 المشروبات الباردة
 </button>
 
-<button onclick="filterMenu('dessert',this)">
+<button class="tab"
+onclick="showSection('dessert',this)">
 الحلى
 </button>
 
-<button onclick="filterMenu('food',this)">
-كرواسون وساندوتش
-</button>
-
-</div>
-
-
-<div class="menu-grid">
-
-
-<!-- ================= HOT ================= -->
-
-<div class="card hot">
-
-<img src="https://images.unsplash.com/photo-1510591509098-f4fdc6d0ff04?auto=format&fit=crop&w=900&q=85">
-
-<div class="card-content">
-
-<h3>إسبريسو</h3>
-
-<p>سنقل أو دبل</p>
-
-<div class="price">
-سنقل 10 ريال
-<br>
-دبل 11 ريال
-</div>
-
-</div>
-</div>
-
-
-<div class="card hot">
-
-<img src="https://images.unsplash.com/photo-1498804103079-a6351b050096?auto=format&fit=crop&w=900&q=85">
-
-<div class="card-content">
-
-<h3>قهوة اليوم</h3>
-
-<p>حارة</p>
-
-<div class="price">
-صغير 5 ريال
-<br>
-كبير 9 ريال
-</div>
-
-</div>
-</div>
-
-
-<div class="card hot">
-
-<img src="https://images.unsplash.com/photo-1572449043416-55f4685c9bb7?auto=format&fit=crop&w=900&q=85">
-
-<div class="card-content">
-
-<h3>كابتشينو</h3>
-
-<div class="price">
-صغير 14 ريال
-<br>
-كبير 16 ريال
-</div>
-
-</div>
-</div>
-
-
-<div class="card hot">
-
-<img src="https://images.unsplash.com/photo-1551030173-122aabc4489c?auto=format&fit=crop&w=900&q=85">
-
-<div class="card-content">
-
-<h3>أمريكانو</h3>
-
-<div class="price">
-صغير 11 ريال
-<br>
-كبير 13 ريال
-</div>
-
-</div>
-</div>
-
-
-<div class="card hot">
-
-<img src="https://images.unsplash.com/photo-1561882468-9110e03e0f78?auto=format&fit=crop&w=900&q=85">
-
-<div class="card-content">
-
-<h3>كافيه لاتيه</h3>
-
-<div class="price">
-صغير 14 ريال
-<br>
-كبير 16 ريال
-</div>
-
-</div>
-</div>
-
-
-<div class="card hot">
-
-<img src="https://images.unsplash.com/photo-1534778101976-62847782c213?auto=format&fit=crop&w=900&q=85">
-
-<div class="card-content">
-
-<h3>فلات وايت</h3>
-
-<div class="price">
-صغير 13 ريال
-<br>
-كبير 15 ريال
-</div>
-
-</div>
-</div>
-
-
-<div class="card hot">
-
-<img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=900&q=85">
-
-<div class="card-content">
-
-<h3>V60</h3>
-
-<div class="price">
-18 ريال
-</div>
-
-</div>
-</div>
-
-
-<div class="card hot">
-
-<img src="https://images.unsplash.com/photo-1485808191679-5f86510681a2?auto=format&fit=crop&w=900&q=85">
-
-<div class="card-content">
-
-<h3>كورتادو</h3>
-
-<div class="price">
-14 ريال
-</div>
-
-</div>
-</div>
-
-
-<div class="card hot">
-
-<img src="https://images.unsplash.com/photo-1541167760496-1628856ab772?auto=format&fit=crop&w=900&q=85">
-
-<div class="card-content">
-
-<h3>سبانش حار</h3>
-
-<div class="price">
-صغير 17 ريال
-<br>
-كبير 19 ريال
-</div>
-
-</div>
-</div>
-
-
-<div class="card hot">
-
-<img src="https://images.unsplash.com/photo-1515823064-d6e0c04616a7?auto=format&fit=crop&w=900&q=85">
-
-<div class="card-content">
-
-<h3>الماتشا</h3>
-
-<div class="price">
-19 ريال
-</div>
-
-</div>
-</div>
-
-
-<div class="card hot">
-
-<img src="https://images.unsplash.com/photo-1594631252845-29fc4cc8cde9?auto=format&fit=crop&w=900&q=85">
-
-<div class="card-content">
-
-<h3>شاي أحمر</h3>
-
-<div class="price">
-3 ريال
-</div>
-
-</div>
-</div>
-
-
-<div class="card hot">
-
-<img src="https://images.unsplash.com/photo-1556679343-c7306c1976bc?auto=format&fit=crop&w=900&q=85">
-
-<div class="card-content">
-
-<h3>شاي أخضر</h3>
-
-<div class="price">
-3 ريال
-</div>
-
-</div>
-</div>
-
-
-<!-- ================= COLD ================= -->
-
-<div class="card cold">
-
-<img src="https://images.unsplash.com/photo-1517701604599-bb29b565090c?auto=format&fit=crop&w=900&q=85">
-
-<div class="card-content">
-
-<h3>قهوة اليوم</h3>
-
-<p>باردة</p>
-
-<div class="price">
-صغير 6 ريال
-<br>
-كبير 10 ريال
-</div>
-
-</div>
-</div>
-
-
-<div class="card cold">
-
-<img src="https://images.unsplash.com/photo-1551030173-122aabc4489c?auto=format&fit=crop&w=900&q=85">
-
-<div class="card-content">
-
-<h3>V60 باردة</h3>
-
-<div class="price">
-19 ريال
-</div>
-
-</div>
-</div>
-
-
-<div class="card cold">
-
-<img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=900&q=85">
-
-<div class="card-content">
-
-<h3>آيس كراميل</h3>
-
-<div class="price">
-16 ريال
-</div>
-
-</div>
-</div>
-
-
-<div class="card cold">
-
-<img src="https://images.unsplash.com/photo-1517701604599-bb29b565090c?auto=format&fit=crop&w=900&q=85">
-
-<div class="card-content">
-
-<h3>آيس لاتيه</h3>
-
-<div class="price">
-17 ريال
-</div>
-
-</div>
-</div>
-
-
-<div class="card cold">
-
-<img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=900&q=85">
-
-<div class="card-content">
-
-<h3>آيس سبانش</h3>
-
-<div class="price">
-20 ريال
-</div>
-
-</div>
-</div>
-
-
-<div class="card cold">
-
-<img src="https://images.unsplash.com/photo-1517701550927-30cf4ba1dba5?auto=format&fit=crop&w=900&q=85">
-
-<div class="card-content">
-
-<h3>آيس فلات وايت</h3>
-
-<div class="price">
-16 ريال
-</div>
-
-</div>
-</div>
-
-
-<div class="card cold">
-
-<img src="https://images.unsplash.com/photo-1498804103079-a6351b050096?auto=format&fit=crop&w=900&q=85">
-
-<div class="card-content">
-
-<h3>آيس أمريكانو</h3>
-
-<div class="price">
-15 ريال
-</div>
-
-</div>
-</div>
-
-
-<div class="card cold">
-
-<img src="https://images.unsplash.com/photo-1546173159-315724a31696?auto=format&fit=crop&w=900&q=85">
-
-<div class="card-content">
-
-<h3>موهيتو خوخ</h3>
-
-<div class="price">
-16 ريال
-</div>
-
-</div>
-</div>
-
-
-<div class="card cold">
-
-<img src="https://images.unsplash.com/photo-1546171753-97d7676e4602?auto=format&fit=crop&w=900&q=85">
-
-<div class="card-content">
-
-<h3>موهيتو فراولة</h3>
-
-<div class="price">
-16 ريال
-</div>
-
-</div>
-</div>
-
-
-<div class="card cold">
-
-<img src="https://images.unsplash.com/photo-1544145945-f90425340c7e?auto=format&fit=crop&w=900&q=85">
-
-<div class="card-content">
-
-<h3>موهيتو توت أزرق</h3>
-
-<div class="price">
-16 ريال
-</div>
-
-</div>
-</div>
-
-
-<div class="card cold">
-
-<img src="https://images.unsplash.com/photo-1556679343-c7306c1976bc?auto=format&fit=crop&w=900&q=85">
-
-<div class="card-content">
-
-<h3>كركديه</h3>
-
-<div class="price">
-17 ريال
-</div>
-
-</div>
-</div>
-
-
-<div class="card cold">
-
-<img src="https://images.unsplash.com/photo-1515823064-d6e0c04616a7?auto=format&fit=crop&w=900&q=85">
-
-<div class="card-content">
-
-<h3>ماتشا باردة</h3>
-
-<div class="price">
-20 ريال
-</div>
-
-</div>
-</div>
-
-
-<!-- ================= DESSERT ================= -->
-
-<div class="card dessert">
-
-<img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&w=900&q=85">
-
-<div class="card-content">
-
-<h3>ترافل مانجو</h3>
-
-<div class="price">
-16 ريال
-</div>
-
-</div>
-</div>
-
-
-<div class="card dessert">
-
-<img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=900&q=85">
-
-<div class="card-content">
-
-<h3>مولتن</h3>
-
-<div class="price">
-22 ريال
-</div>
-
-</div>
-</div>
-
-
-<div class="card dessert">
-
-<img src="https://images.unsplash.com/photo-1578985545062-69928b1d9584?auto=format&fit=crop&w=900&q=85">
-
-<div class="card-content">
-
-<h3>ماتيلدا</h3>
-
-<div class="price">
-22 ريال
-</div>
-
-</div>
-</div>
-
-
-<div class="card dessert">
-
-<img src="https://images.unsplash.com/photo-1571115177098-24ec42ed204d?auto=format&fit=crop&w=900&q=85">
-
-<div class="card-content">
-
-<h3>سان سبستيان</h3>
-
-<div class="price">
-21 ريال
-</div>
-
-</div>
-</div>
-
-
-<div class="card dessert">
-
-<img src="https://images.unsplash.com/photo-1582058091505-f87a2e55a40f?auto=format&fit=crop&w=900&q=85">
-
-<div class="card-content">
-
-<h3>براونيز</h3>
-
-<div class="price">
-16 ريال
-</div>
-
-</div>
-</div>
-
-
-<div class="card dessert">
-
-<img src="https://images.unsplash.com/photo-1578985545062-69928b1d9584?auto=format&fit=crop&w=900&q=85">
-
-<div class="card-content">
-
-<h3>تشوكو كيك</h3>
-
-<div class="price">
-17 ريال
-</div>
-
-</div>
-</div>
-
-
-<div class="card dessert">
-
-<img src="https://images.unsplash.com/photo-1499636136210-6f4ee915583e?auto=format&fit=crop&w=900&q=85">
-
-<div class="card-content">
-
-<h3>كوكيز</h3>
-
-<div class="price">
-7 ريال
-</div>
-
-</div>
-</div>
-
-
-<div class="card dessert">
-
-<img src="https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&w=900&q=85">
-
-<div class="card-content">
-
-<h3>كوكيز أصابع</h3>
-
-<div class="price">
-12 ريال
-</div>
-
-</div>
-</div>
-
-
-<div class="card dessert">
-
-<img src="https://images.unsplash.com/photo-1590080875515-8a3a8dc5735e?auto=format&fit=crop&w=900&q=85">
-
-<div class="card-content">
-
-<h3>كوكيز بايتس</h3>
-
-<div class="price">
-16 ريال
-</div>
-
-</div>
-</div>
-
-
-<div class="card dessert">
-
-<img src="https://images.unsplash.com/photo-1578985545062-69928b1d9584?auto=format&fit=crop&w=900&q=85">
-
-<div class="card-content">
-
-<h3>رونق كيك</h3>
-
-<div class="price">
-18 ريال
-</div>
-
-</div>
-</div>
-
-
-<!-- ================= WATER ================= -->
-
-<div class="card cold">
-
-<img src="https://images.unsplash.com/photo-1564419320461-6870880221ad?auto=format&fit=crop&w=900&q=85">
-
-<div class="card-content">
-
-<h3>مياه</h3>
-
-<div class="price">
-2 ريال
-</div>
-
-</div>
-</div>
-
-
-<!-- ================= FOOD ================= -->
-
-<div class="card food">
-
-<img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=900&q=85">
-
-<div class="card-content">
-
-<h3>كرواسون سادة</h3>
-
-<div class="price">
-السعر قريبًا
-</div>
-
-</div>
-</div>
-
-
-<div class="card food">
-
-<img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=900&q=85">
-
-<div class="card-content">
-
-<h3>كرواسون زعتر</h3>
-
-<div class="price">
-السعر قريبًا
-</div>
-
-</div>
-</div>
-
-
-<div class="card food">
-
-<img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=900&q=85">
-
-<div class="card-content">
-
-<h3>كرواسون جبن</h3>
-
-<div class="price">
-السعر قريبًا
-</div>
-
-</div>
-</div>
-
-
-<div class="card food">
-
-<img src="https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&w=900&q=85">
-
-<div class="card-content">
-
-<h3>ساندوتش حلومي</h3>
-
-<div class="price">
-السعر قريبًا
-</div>
-
-</div>
-</div>
-
-
-<div class="card food">
-
-<img src="https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&w=900&q=85">
-
-<div class="card-content">
-
-<h3>ساندوتش تونة</h3>
-
-<div class="price">
-السعر قريبًا
-</div>
-
-</div>
-</div>
-
-
-<div class="card food">
-
-<img src="https://images.unsplash.com/photo-1553909489-cd47e0907980?auto=format&fit=crop&w=900&q=85">
-
-<div class="card-content">
-
-<h3>ساندوتش تركي</h3>
-
-<div class="price">
-السعر قريبًا
-</div>
-
-</div>
-</div>
-
-
-<div class="card food">
-
-<img src="https://images.unsplash.com/photo-1553909489-cd47e0907980?auto=format&fit=crop&w=900&q=85">
-
-<div class="card-content">
-
-<h3>ساندوتش تونة سبايسي</h3>
-
-<div class="price">
-السعر قريبًا
-</div>
-
-</div>
-</div>
-
-
 </div>
 
-</section>
 
-
-<!-- LOCATION -->
-
-<section class="location" id="location">
-
-<div class="title">
-
-<small>FIND US</small>
-
-<h2>موقعنا</h2>
-
-</div>
+<div id="hot" class="menu-grid"></div>
 
-<p>
-نسعد بزيارتكم في رونق البن ☕
-</p>
+<div id="cold" class="menu-grid hidden"></div>
 
-<a href="https://maps.google.com" target="_blank">
-📍 افتح موقعنا
-</a>
+<div id="dessert" class="menu-grid hidden"></div>
 
 </section>
 
 
 <!-- CONTACT -->
 
-<section class="contact" id="contact">
+<section id="contact">
 
-<div class="title">
+<div class="contact">
 
-<small>CONTACT</small>
+<div class="section-title">
 
-<h2>تواصل معنا</h2>
+<h2>
+تواصل معنا
+</h2>
+
+<p>
+ننتظركم في رونق البن 🤎
+</p>
 
 </div>
 
-<div class="socials">
 
-<a href="#" target="_blank">
+<div class="contact-grid">
+
+<a href="tel:0579299660">
+📞 اتصال
+<br>
+0579299660
+</a>
+
+<a href="https://wa.me/966579299660" target="_blank">
 💬 واتساب
 </a>
 
-<a href="https://www.instagram.com/rbcafesa/" target="_blank">
-📸 Instagram
+<a
+href="https://www.instagram.com/rbcafesa?stkn=MWJjbWF0c2x5dTZoeQ=="
+target="_blank">
+📸 إنستقرام
 </a>
 
-<a href="#" target="_blank">
-🎵 TikTok
+<a
+href="https://www.tiktok.com/@rawong_albon?_r=1&_t=ZS-99hir3WQ7We"
+target="_blank">
+🎵 تيك توك
 </a>
+
+<a
+href="https://maps.app.goo.gl/yFJc48HZQkPmxPYw9?g_st=ic"
+target="_blank">
+📍 موقعنا
+</a>
+
+</div>
 
 </div>
 
 </section>
 
+</main>
 
-<!-- FOOTER -->
 
 <footer>
 
-<strong>
-رونق البن | RB Cafe
-</strong>
-
-<br><br>
-
-© 2026 جميع الحقوق محفوظة
+© 2026 رونق البن | RB Cafe
 
 </footer>
 
 
 <script>
 
-function filterMenu(category,button){
+const IMG =
+"https://d3ectyws4rj41r.cloudfront.net/prod_rawongcoffee/";
 
-    const cards=document.querySelectorAll(".card");
 
-    document
-    .querySelectorAll(".categories button")
-    .forEach(btn=>{
-        btn.classList.remove("active");
-    });
+const data = {
 
-    button.classList.add("active");
+hot: [
 
-    cards.forEach(card=>{
+[
+"إسبريسو",
+"10 ريال سنقل | 11 ريال دبل",
+"10/download.jpg"
+],
 
-        if(category==="all"){
-            card.style.display="";
-        }
+[
+"قهوة اليوم - حارة",
+"5 ريال صغير | 9 ريال كبير",
+"36/%D9%82%D9%87%D9%88%D8%A9-%D8%A7%D9%84%D9%8A%D9%88%D9%85-%D8%AD%D8%A7%D8%B1-%281%29.jpg"
+],
 
-        else if(card.classList.contains(category)){
-            card.style.display="";
-        }
+[
+"كابتشينو",
+"14 ريال صغير | 16 ريال كبير",
+"14/download.jpg"
+],
 
-        else{
-            card.style.display="none";
-        }
+[
+"أمريكانو",
+"11 ريال صغير | 13 ريال كبير",
+"34/%D8%A7%D9%85%D8%B1%D9%8A%D9%83%D8%A7%D9%86%D9%88-%D8%AD%D8%A7%D8%B1-%281%29.jpg"
+],
 
-    });
+[
+"كافيه لاتيه",
+"14 ريال صغير | 16 ريال كبير",
+"17/download.jpg"
+],
+
+[
+"فلات وايت",
+"13 ريال صغير | 15 ريال كبير",
+"22/thumbnail-%281%29.jpg"
+],
+
+[
+"قهوة V60 ساخنة",
+"18 ريال",
+"26/thumbnail-%284%29-%281%29.jpg"
+],
+
+[
+"كورتادو",
+"14 ريال",
+"23/thumbnail-%282%29-%281%29.jpg"
+],
+
+[
+"سبانش ساخن",
+"17 ريال صغير | 19 ريال كبير",
+"24/thumbnail-%283%29-%281%29.jpg"
+],
+
+[
+"الماتشا الحارة",
+"19 ريال",
+"48/%D9%85%D8%A7%D8%AA%D8%B4%D8%A7-%D8%AD%D8%A7%D8%B1%D8%A9-%281%29.jpg"
+],
+
+[
+"شاي أخضر",
+"3 ريال",
+"45/%D8%B4%D8%A7%D9%8A-%D8%A3%D8%AE%D8%B6%D8%B1-%281%29.jpg"
+],
+
+[
+"شاي أحمر",
+"3 ريال",
+null
+]
+
+],
+
+
+cold: [
+
+[
+"قهوة اليوم - باردة",
+"6 ريال صغير | 10 ريال كبير",
+"37/%D9%82%D9%87%D9%88%D8%A9-%D8%A7%D9%84%D9%8A%D9%88%D9%85-%D8%A8%D8%A7%D8%B1%D8%AF%D8%A9-%281%29.jpg"
+],
+
+[
+"قهوة V60 مثلجة",
+"19 ريال",
+"27/V60-Cold-%281%29-%281%29.jpg"
+],
+
+[
+"آيس كراميل",
+"16 ريال",
+"28/%D9%83%D8%B1%D8%A7%D9%85%D9%8A%D9%84-%D9%85%D8%A7%D9%83%D9%8A%D8%A7%D8%AA%D9%88-%281%29.jpg"
+],
+
+[
+"آيس لاتيه",
+"17 ريال",
+"29/%D8%A7%D9%8A%D8%B3-%D9%84%D8%A7%D8%AA%D9%8A%D9%87-%281%29.jpg"
+],
+
+[
+"آيس سبانش",
+"20 ريال",
+"30/%D8%B3%D8%A8%D8%A7%D9%86%D8%B4-%D9%84%D8%A7%D8%AA%D9%8A%D9%87-%281%29.jpg"
+],
+
+[
+"آيس فلات وايت",
+"16 ريال",
+"31/%D8%A7%D9%8A%D8%B3-%D9%81%D9%84%D8%A7%D8%AA-%D9%88%D8%A7%D9%8A%D8%AA-%281%29.jpg"
+],
+
+[
+"آيس أمريكانو",
+"15 ريال",
+"35/%D8%A7%D9%8A%D8%B3-%D8%A7%D9%85%D8%B1%D9%8A%D9%83%D8%A7%D9%86%D9%88-%281%29.jpg"
+],
+
+[
+"موهيتو خوخ",
+"16 ريال",
+"33/%D9%85%D9%88%D9%87%D9%8A%D8%AA%D9%88-%D8%AE%D9%88%D8%AE-%281%29.jpg"
+],
+
+[
+"موهيتو فراولة",
+"16 ريال",
+"38/%D9%85%D9%88%D9%87%D9%8A%D8%AA%D9%88-%D9%81%D8%B1%D8%A7%D9%88%D9%84%D8%A9-%281%29.jpg"
+],
+
+[
+"موهيتو توت أزرق",
+"16 ريال",
+"39/%D9%85%D9%88%D9%87%D9%8A%D8%AA%D9%88-%D8%AA%D9%88%D8%AA-%D8%A3%D8%B2%D8%B1%D9%82-%281%29-%281%29.jpg"
+],
+
+[
+"كركديه",
+"17 ريال",
+"32/%D9%83%D8%B1%D9%83%D8%AF%D9%8A%D9%87-2-%281%29.jpg"
+],
+
+[
+"الماتشا",
+"20 ريال",
+"47/%D9%85%D8%A7%D8%AA%D8%B4%D8%A7-%281%29.jpg"
+]
+
+],
+
+
+dessert: [
+
+[
+"ترافل مانجو",
+"16 ريال",
+"11/download.jpg"
+],
+
+[
+"مولتن كيك",
+"22 ريال",
+"40/%D9%85%D9%88%D9%84%D8%AA%D9%86-%D9%83%D9%8A%D9%83-%281%29.jpg"
+],
+
+[
+"كيكة رونق",
+"18 ريال",
+"16/download.jpg"
+],
+
+[
+"ماتيلدا",
+"22 ريال",
+"41/%D9%85%D8%A7%D8%AA%D9%8A%D9%84%D8%AF%D8%A7-%281%29.jpg"
+],
+
+[
+"سان سبستيان",
+"21 ريال",
+"12/download.jpg"
+],
+
+[
+"براونيز",
+"16 ريال",
+"51/%D8%A8%D8%B1%D8%A7%D9%88%D9%86%D9%8A%D8%B2-%D8%AC%D8%A7%D8%B1-%281%29.jpg"
+],
+
+[
+"تشوكو كيك",
+"17 ريال",
+"50/%D8%AA%D8%B4%D9%88%D9%83%D9%88-%D9%83%D9%8A%D9%83-%281%29.jpg"
+],
+
+[
+"كوكيز",
+"7 ريال",
+"44/%D9%83%D9%88%D9%83%D9%8A%D8%B2-%281%29.jpg"
+],
+
+[
+"كوكيز بايتس",
+"16 ريال",
+"43/%D9%83%D9%88%D9%83%D9%8A%D8%B2-%D8%A8%D8%A7%D9%8A%D8%AA%D8%B3-%281%29.jpg"
+],
+
+[
+"أصابع الكوكيز",
+"12 ريال",
+"42/%D8%A7%D8%B5%D8%A7%D8%A8%D8%B9-%D9%83%D9%88%D9%83%D9%8A%D8%B2-%281%29.jpg"
+]
+
+]
+
+};
+
+
+function render(id) {
+
+const box = document.getElementById(id);
+
+box.innerHTML = data[id].map(item => `
+
+<article class="card">
+
+${item[2] ? `
+<img
+src="${IMG + item[2]}"
+alt="${item[0]}"
+loading="lazy">
+` : ""}
+
+<div class="card-body">
+
+<h3>
+${item[0]}
+</h3>
+
+<div class="price">
+${item[1]}
+</div>
+
+</div>
+
+</article>
+
+`).join("");
+
+}
+
+
+render("hot");
+render("cold");
+render("dessert");
+
+
+function showSection(id, button) {
+
+document
+.querySelectorAll("#menu > .menu-grid")
+.forEach(section => {
+section.classList.add("hidden");
+});
+
+document
+.getElementById(id)
+.classList.remove("hidden");
+
+document
+.querySelectorAll(".tab")
+.forEach(tab => {
+tab.classList.remove("active");
+});
+
+button.classList.add("active");
+
 }
 
 </script>
